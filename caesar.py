@@ -1,15 +1,22 @@
 import argparse
 
 def shift_message(message, shift):
+    # shift each letter individually
     encrypted = ""
     for unshifted_letter in message:
         encrypted += shift_letter(unshifted_letter, shift)
     return encrypted
 
 def shift_letter(letter, shift):
-    if letter == " ": return " "
+
+    if letter == " ":  # leaves spaces as-is
+        return " "
+
+    # because numbers
     ordinal = ord(letter)
     shifted_ordinal = ordinal + shift
+
+    # rotate the letters if they're out of range
     if shifted_ordinal <= 97:
         shifted_ordinal = shifted_ordinal + 26
     if shifted_ordinal >= 123:
