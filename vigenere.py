@@ -24,7 +24,7 @@ def shift_letter(message_letter, key_letter, shift_direction):
 
     # because numbers
     letter_ordinal = ord(message_letter)
-    key_ordinal = ord(key_letter) - ALPHA_MIN
+    key_ordinal = ord(key_letter) - ALPHA_MIN - 1
 
     if shift_direction:
         shifted_ordinal = letter_ordinal + key_ordinal
@@ -37,7 +37,7 @@ def shift_letter(message_letter, key_letter, shift_direction):
     if shifted_ordinal >= ALPHA_MAX:
         shifted_ordinal = shifted_ordinal - ALPHA_SHIFT
 
-    print "shifting %s (%s) with %s (%s) to %s (%s)" % (message_letter, letter_ordinal, key_letter, key_ordinal, chr(shifted_ordinal), shifted_ordinal)
+    # print "shifting %s (%s) with %s (%s) to %s (%s)" % (message_letter, letter_ordinal, key_letter, key_ordinal, chr(shifted_ordinal), shifted_ordinal)
 
     return chr(shifted_ordinal)
 
