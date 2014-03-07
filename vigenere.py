@@ -15,6 +15,9 @@ def expand_key(key, message_length):
 
 def shift_letter(message_letter, key_letter, shift_direction):
 
+    if message_letter == " ":  # leaves spaces as-is
+        return " "
+
     # because numbers
     letter_ordinal = ord(message_letter)
     key_ordinal = ord(key_letter) - 97
